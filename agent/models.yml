@@ -1,0 +1,25 @@
+providers:
+  llama-asus:
+    api: openai-completions
+    baseUrl: http://asus:8001/v1
+    apiKey: local-bypass
+    models:
+      - id: Jackrong/Qwopus3.6-27B-v2
+        name: "Asus · Qwopus 27B (IQ4_XS)"
+        contextWindow: 131072
+        maxTokens: 8192
+        input: [text]
+        thinkingFormat: qwen
+        reasoningContentField: reasoning_content
+        supportsStrictMode: true
+
+  llama-nuc-vision:
+    api: openai-completions
+    baseUrl: http://nuc:8001/v1
+    apiKey: local-bypass
+    models:
+      - id: qwen2.5-vl-7b
+        name: "NUC · Qwen2.5-VL 7B (vision only)"
+        contextWindow: 8192
+        maxTokens: 2048
+        input: [text, image]

@@ -1,0 +1,7 @@
+setupVersion: 1
+modelRoles: 
+  default: llama-asus/Jackrong/Qwopus3.6-27B-v2
+  smol: llama-asus/Jackrong/Qwopus3.6-27B-v2
+  slow: llama-asus/Jackrong/Qwopus3.6-27B-v2
+  plan: llama-asus/Jackrong/Qwopus3.6-27B-v2
+  commit: llama-asus/Jackrong/Qwopus3.6-27B-v2
