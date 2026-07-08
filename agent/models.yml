@@ -13,13 +13,18 @@ providers:
         reasoningContentField: reasoning_content
         supportsStrictMode: true
 
-  llama-nuc-vision:
-    api: openai-completions
-    baseUrl: http://nuc:8001/v1
-    apiKey: local-bypass
-    models:
-      - id: qwen2.5-vl-7b
-        name: "NUC · Qwen2.5-VL 7B (vision only)"
-        contextWindow: 8192
-        maxTokens: 2048
-        input: [text, image]
+  # Disabled 2026-07-07: this 8k-context model was auto-selected as the
+  # summarizer/compaction fallback and rejected a 66k-token request with
+  # HTTP 400 exceed_context_size_error. Re-enable only when you have an
+  # explicit vision task; consider bumping the backing llama.cpp -c flag
+  # (and contextWindow here) before doing so.
+  # llama-nuc-vision:
+  #   api: openai-completions
+  #   baseUrl: http://nuc:8001/v1
+  #   apiKey: local-bypass
+  #   models:
+  #     - id: qwen2.5-vl-7b
+  #       name: "NUC · Qwen2.5-VL 7B (vision only)"
+  #       contextWindow: 8192
+  #       maxTokens: 2048
+  #       input: [text, image]
